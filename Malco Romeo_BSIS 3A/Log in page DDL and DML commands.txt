@@ -1,0 +1,15 @@
+CREATE DATABASE bsis3a-malco;
+
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(255),
+    course VARCHAR (50),
+   username VARCHAR(255),
+   PASSWORD VARCHAR(255),
+    
+INSERT INTO student (StudentID,FirstName,LastName,Email,course,username,PASSWORD)
+VALUES('1','Romeo','Malco','romeo20@gamil.com','BSIS 3A','romeo05','romeo2006');
+VALUES('2','Hazel','Belleza','hazel@gamil.com','BSIS 3A','romeo05','romeo2006');

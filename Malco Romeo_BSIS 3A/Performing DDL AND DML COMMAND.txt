@@ -1,0 +1,53 @@
+CREATE DATABASE bsis3c;
+ALTER
+TRUNCATE
+DROP
+
+CREATE TABLE students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Course VARCHAR(50)
+);
+
+CREATE TABLE course (
+    id INT PRIMARY KEY,
+    CourseID VARCHAR(50),
+    CourseName VARCHAR(50)
+);
+
+CREATE TABLE section (
+    id INT PRIMARY KEY,
+    SectionID VARCHAR(50),
+    SectionName VARCHAR(50)
+);
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('101', 'romeo', 'malco', 'Bsis-3a');
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('102', 'Elisa', 'barra', 'BSIS-3B');
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('103', 'hazel', 'saluya', 'BSED-3A');
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('104', 'fatima', 'ong', 'Bsed-3a');
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('105', 'Michael', 'Brondial', 'ACT-3A');
+
+INSERT INTO students(StudentID, FirstName, LastName, Course)
+VALUES ('106', 'cla', 'Ciron', 'BSIS-3A');
+
+
+SELECT * FROM students
+WHERE StudentID = 102;
+
+
+UPDATE students SET course ='ACT-3A'
+WHERE StudentID = 105;
+
+
+DELETE FROM students 
+WHERE studentID = 104;

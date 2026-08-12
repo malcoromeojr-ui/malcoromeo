@@ -1,0 +1,50 @@
+CREATE DATABASE studentinformation;
+
+
+CREATE TABLE student (
+    student_id VARCHAR(20) PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    username VARCHAR(50),
+    password VARCHAR(255),
+    email VARCHAR(255),
+    home_address VARCHAR(100),
+    zip_code VARCHAR(10),
+);
+
+
+CREATE TABLE subject (
+    subject_id INT  PRIMARY KEY,
+    subject_name VARCHAR(100),
+    teacher VARCHAR(100),
+);
+
+
+CREATE TABLE student (
+    student_id VARCHAR(20),
+    subject_id INT,
+    grade DECIMAL(3, 2),
+    PRIMARY KEY (student_id, subject_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (subject_id) REFERENCES subjects(subject_id),
+);
+
+
+INSERT INTO zip_branches (
+ VALUES ('4432', 'Main Campus'),
+('4431', 'Annex Campus');
+
+INSERT INTO students (student_id, first_name, last_name, username, password, email, home_address, zip_code) VALUES 
+('S10', 'Alice', 'Reyes', 'alice', 'pass123', 'alice@sample.com', 'Baao', '4432'),
+('S11', 'Bob', 'Miller', 'bob', 'pass123', 'bob@sample.com', 'Iriga', '4431');
+
+INSERT INTO subjects (subject_id, subject_name, teacher) VALUES 
+(1, 'Web Dev', 'Mr. Tan'),
+(2, 'PHP/MySQL', 'Sir Mike'),
+(3, 'Networking', 'Sir Alex');
+
+INSERT INTO student_performance (student_id, subject_id, grade) VALUES 
+('S10', 1, 1.25),
+('S10', 2, 1.50),
+('S11', 1, 2.00),
+('S11', 3, 1.75);

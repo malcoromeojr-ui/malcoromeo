@@ -1,0 +1,85 @@
+SELECT COUNT(school) AS numberofschool,school FROM mock_data_users
+Group BY school;
+
+SELECT DISTINCT(school)
+FROM mock_data_users
+
+
+SELECT first_name 
+FROM mock_data_users
+ORDER BY first_name ASC 
+
+
+SELECT First_name
+FROM mock_data_users 
+ORDER BY first_name desc
+
+SELECT *
+FROM mock_data_users
+ORDER BY job_title asc
+
+
+SELECT COUNT(credit_card_type)
+FROM mock_data_users;
+WHERE credit_card_type ="americanexpress"; 
+
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE
+FROM mock_data_users
+WHERE credit_card_type ="jcb"; 
+
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE,school
+FROM mock_data_users
+WHERE credit_card_type ="jcb"
+GROUP BY school
+ORDER BY  numberofcardusingAE; asc
+
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE,school
+FROM mock_data_users
+WHERE credit_card_type ="jcb"
+GROUP BY school
+ORDER BY  numberofcardusingAE; DESC
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE
+FROM mock_data_users
+WHERE credit_card_type ="americanexpress"; 
+
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE,school
+FROM mock_data_users
+WHERE credit_card_type ="americanexpress"
+GROUP  BY school;
+
+
+SELECT COUNT(credit_card_type) AS numberofcardusingAE,school
+FROM mock_data_users
+WHERE credit_card_type ="americanexpress"
+GROUP  BY school
+order BY school;
+
+SELECT COUNT(GENDER)
+FROM mock_data_users
+WHERE gender ='male'
+
+SELECT COUNT(GENDER)
+FROM mock_data_users
+WHERE gender ='female'
+
+
+SELECT COUNT(GENDER) AS numberofgender,gender
+FROM mock_data_users
+group BY gender;
+
+
+SELECT COUNT(GENDER) AS numberofgender,gender,school
+FROM mock_data_users
+WHERE school='Camarines Sur Polytechnic Colleges'
+group BY gender,school;
+
+
+SELECT COUNT(GENDER) AS numberofgender,gender,school
+FROM mock_data_users
+group BY gender,school
+order BY school;
